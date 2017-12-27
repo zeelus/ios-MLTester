@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v6J-Y1-o1q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="bPD-SV-x3g">
+            <objects>
+                <viewController id="v6J-Y1-o1q" customClass="MainViewController" customModule="MLTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ayc-jt-pvB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-81-1N4">
+                                <rect key="frame" x="112.5" y="158.5" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.87965649366378784" green="0.099619083106517792" blue="0.016547370702028275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7a5-KW-NI9"/>
+                                    <constraint firstAttribute="width" secondItem="lbW-81-1N4" secondAttribute="height" multiplier="1:1" id="NPS-uH-vZT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-kn-gNO">
+                                <rect key="frame" x="16" y="338.5" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.2066674530506134" green="0.94277286529541016" blue="0.35758954286575317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aWe-kn-gNO" secondAttribute="height" multiplier="1:1" id="vaP-fc-xJh"/>
+                                    <constraint firstAttribute="width" constant="150" id="zMf-Mf-hE1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b03-I2-gju">
+                                <rect key="frame" x="209" y="338.5" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.57742810249328613" green="0.20010364055633545" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="VOX-eQ-5wO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aWe-kn-gNO" firstAttribute="leading" secondItem="XdM-1Z-wXT" secondAttribute="leading" constant="16" id="3ib-NI-bUl"/>
+                            <constraint firstItem="XdM-1Z-wXT" firstAttribute="trailing" secondItem="b03-I2-gju" secondAttribute="trailing" constant="16" id="KMV-k0-JUA"/>
+                            <constraint firstItem="b03-I2-gju" firstAttribute="centerY" secondItem="ayc-jt-pvB" secondAttribute="centerY" constant="80" id="bcc-Kd-0wH"/>
+                            <constraint firstItem="lbW-81-1N4" firstAttribute="centerY" secondItem="ayc-jt-pvB" secondAttribute="centerY" constant="-100" id="k5t-ka-AUM"/>
+                            <constraint firstItem="aWe-kn-gNO" firstAttribute="centerY" secondItem="ayc-jt-pvB" secondAttribute="centerY" constant="80" id="oID-X6-xz0"/>
+                            <constraint firstItem="b03-I2-gju" firstAttribute="width" secondItem="b03-I2-gju" secondAttribute="height" multiplier="1:1" id="tIS-3d-jWN"/>
+                            <constraint firstItem="lbW-81-1N4" firstAttribute="centerX" secondItem="ayc-jt-pvB" secondAttribute="centerX" id="uiz-48-xQo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XdM-1Z-wXT"/>
+                    </view>
+                    <connections>
+                        <outlet property="greenButton" destination="aWe-kn-gNO" id="oAe-nB-DDY"/>
+                        <outlet property="purpleButton" destination="b03-I2-gju" id="zHx-v1-GmW"/>
+                        <outlet property="redButton" destination="lbW-81-1N4" id="yjt-Ud-w04"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fg-c2-ulN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="139"/>
+        </scene>
+    </scenes>
+</document>

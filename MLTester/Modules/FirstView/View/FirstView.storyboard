@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jot-If-0T8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="rSr-1T-Yf8">
+            <objects>
+                <viewController id="Jot-If-0T8" customClass="FirstViewController" customModule="MLTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fu3-Ht-JAs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="kM7-2o-6Mc">
+                                <rect key="frame" x="112" y="208.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kM7-2o-6Mc" secondAttribute="height" multiplier="1:1" id="f4G-a8-bct"/>
+                                    <constraint firstAttribute="width" constant="150" id="gJ4-Ks-oet"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="uZI-pX-2W4">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uZI-pX-2W4" secondAttribute="height" multiplier="1:1" id="Gl8-o4-Vko"/>
+                                    <constraint firstAttribute="width" constant="150" id="Sc8-Ft-30A"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PurpleCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="X5v-jX-hBq">
+                                <rect key="frame" x="112" y="308.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X5v-jX-hBq" secondAttribute="height" multiplier="1:1" id="8Zj-mr-crU"/>
+                                    <constraint firstAttribute="width" constant="150" id="ZSm-9r-4xb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X5v-jX-hBq" firstAttribute="width" secondItem="X5v-jX-hBq" secondAttribute="height" multiplier="1:1" id="4OK-al-pea"/>
+                            <constraint firstItem="uZI-pX-2W4" firstAttribute="centerX" secondItem="Fu3-Ht-JAs" secondAttribute="centerX" id="9d1-iJ-Hvh"/>
+                            <constraint firstItem="kM7-2o-6Mc" firstAttribute="centerX" secondItem="Fu3-Ht-JAs" secondAttribute="centerX" id="BR8-J1-tke"/>
+                            <constraint firstItem="uZI-pX-2W4" firstAttribute="top" secondItem="kM7-2o-6Mc" secondAttribute="bottom" constant="-100" id="I0d-CG-Oxu"/>
+                            <constraint firstItem="X5v-jX-hBq" firstAttribute="top" secondItem="uZI-pX-2W4" secondAttribute="bottom" constant="-100" id="Kcz-sc-cfY"/>
+                            <constraint firstItem="uZI-pX-2W4" firstAttribute="centerY" secondItem="Fu3-Ht-JAs" secondAttribute="centerY" id="KgN-iX-TaS"/>
+                            <constraint firstItem="uZI-pX-2W4" firstAttribute="centerX" secondItem="Fu3-Ht-JAs" secondAttribute="centerX" id="XLJ-iN-7TG"/>
+                            <constraint firstItem="uZI-pX-2W4" firstAttribute="width" secondItem="uZI-pX-2W4" secondAttribute="height" multiplier="1:1" id="egv-gA-QGl"/>
+                            <constraint firstItem="X5v-jX-hBq" firstAttribute="centerX" secondItem="Fu3-Ht-JAs" secondAttribute="centerX" id="sfU-hx-5tY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ihF-Kj-1iP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="30X-Aa-WyR"/>
+                    <connections>
+                        <outlet property="greenImage" destination="uZI-pX-2W4" id="l6L-PR-0uL"/>
+                        <outlet property="purpleImage" destination="X5v-jX-hBq" id="g3p-8I-ugg"/>
+                        <outlet property="redImage" destination="kM7-2o-6Mc" id="WRi-76-NMx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgi-pI-Zdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="1099"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GreenCyrcle" width="512" height="512"/>
+        <image name="PurpleCyrcle" width="512" height="512"/>
+        <image name="RedCyrcle" width="512" height="512"/>
+    </resources>
+</document>
