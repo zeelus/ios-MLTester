@@ -20,7 +20,9 @@ class FirstViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: .from) as? FirstViewController,
-            let toVC = transitionContext.viewController(forKey: .to) as? MainViewController
+            let navigationView = transitionContext.viewController(forKey: .to) as? UINavigationController,
+            //let toVC = transitionContext.viewController(forKey: .to)  as? MainViewController
+            let toVC = navigationView.childViewControllers.first as? MainViewController
         else { return }
         self.transitionContext = transitionContext
         
@@ -28,6 +30,8 @@ class FirstViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         containerView.addSubview(toVC.view)
         
         let screen = UIScreen.main.bounds
+        
+        let width = screen.width * 0.4
         
         let redAnimation = CABasicAnimation(keyPath: "position")
         redAnimation.fromValue = fromVC.redImage.center
@@ -38,14 +42,14 @@ class FirstViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         
         let greenAnimation = CABasicAnimation(keyPath: "position")
         greenAnimation.fromValue = fromVC.greenImage.center
-        greenAnimation.toValue = CGPoint(x: 16 + 75, y: (screen.size.height / 2) + 80)
+        greenAnimation.toValue = CGPoint(x: 16 + (width / 2), y: (screen.size.height / 2) + 80)
         greenAnimation.delegate = self
         greenAnimation.duration = self.duration
         toVC.greenButton.layer.add(greenAnimation, forKey: "position")
         
         let purpleAnimation = CABasicAnimation(keyPath: "position")
         purpleAnimation.fromValue = fromVC.purpleImage.center
-        purpleAnimation.toValue = CGPoint(x: screen.size.width - (16 + 75), y: (screen.size.height / 2) + 80)
+        purpleAnimation.toValue = CGPoint(x: screen.size.width - (16 + (width / 2)), y: (screen.size.height / 2) + 80)
         purpleAnimation.delegate = self
         purpleAnimation.duration = self.duration
         toVC.purpleButton.layer.add(purpleAnimation, forKey: "position")

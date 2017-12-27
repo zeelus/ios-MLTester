@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,35 +23,32 @@
                                 <rect key="frame" x="112" y="208.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LXl-bH-pzI" secondAttribute="height" multiplier="1:1" id="OIJ-tu-Y0U"/>
-                                    <constraint firstAttribute="width" constant="150" id="Tfg-vR-byi"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="ABl-qL-WvO">
                                 <rect key="frame" x="112" y="258" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ABl-qL-WvO" secondAttribute="height" multiplier="1:1" id="SV5-mN-aEP"/>
-                                    <constraint firstAttribute="width" constant="150" id="lfe-6D-5v3"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PurpleCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="1Nk-Ig-eg8">
                                 <rect key="frame" x="112" y="308.5" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="EF1-gB-W9V"/>
                                     <constraint firstAttribute="width" secondItem="1Nk-Ig-eg8" secondAttribute="height" multiplier="1:1" id="dGI-qh-gyA"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LXl-bH-pzI" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="11I-0H-o6J"/>
                             <constraint firstItem="ABl-qL-WvO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5ES-sT-xKy"/>
                             <constraint firstItem="1Nk-Ig-eg8" firstAttribute="top" secondItem="ABl-qL-WvO" secondAttribute="bottom" constant="-100" id="5tc-uH-oiR"/>
                             <constraint firstItem="ABl-qL-WvO" firstAttribute="top" secondItem="LXl-bH-pzI" secondAttribute="bottom" constant="-100" id="OkL-H6-ZDr"/>
+                            <constraint firstItem="1Nk-Ig-eg8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="TRn-N8-Zma"/>
                             <constraint firstItem="LXl-bH-pzI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Td9-ug-PVn"/>
-                            <constraint firstItem="ABl-qL-WvO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hKj-gF-QuK"/>
                             <constraint firstItem="1Nk-Ig-eg8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ly8-8b-4O4"/>
-                            <constraint firstItem="1Nk-Ig-eg8" firstAttribute="width" secondItem="1Nk-Ig-eg8" secondAttribute="height" multiplier="1:1" id="oZF-rY-3Lw"/>
                             <constraint firstItem="ABl-qL-WvO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="sRc-U2-ECl"/>
-                            <constraint firstItem="ABl-qL-WvO" firstAttribute="width" secondItem="ABl-qL-WvO" secondAttribute="height" multiplier="1:1" id="wJ1-oz-Weg"/>
+                            <constraint firstItem="ABl-qL-WvO" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="wKc-zo-qJz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
