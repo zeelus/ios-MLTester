@@ -57,8 +57,17 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let button = self.lastPressedButton, fromVC is MainViewController else { return nil }
-        self.navigationController?.delegate = nil
-        return CircleAnimation(lastPressedButton: button)
+        guard let button = self.lastPressedButton else { return nil }
+
+        if fromVC  is MainViewController {
+            //self.navigationController?.delegate = nil
+            return CircleAnimation(lastPressedButton: button)
+        }
+        
+        if toVC is MainViewController {
+            return CircleAnimationBack(lastPressedButton: button)
+        }
+        
+        return nil
     }
 }
