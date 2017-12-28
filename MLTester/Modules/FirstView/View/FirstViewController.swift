@@ -16,7 +16,6 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setTransparentNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,6 +25,7 @@ class FirstViewController: UIViewController {
     func goToMainView() {
         guard let vc = UIStoryboard(name: "MainView", bundle: nil).instantiateInitialViewController() else { return }
         vc.transitioningDelegate = self
+        vc.setTransparentNavigationBar()
         self.present(vc, animated: true, completion: nil)
     }
     

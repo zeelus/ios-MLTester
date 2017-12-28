@@ -27,7 +27,7 @@ class FirstViewAnimation: NSObject, UIViewControllerAnimatedTransitioning {
         self.transitionContext = transitionContext
         
         let containerView = transitionContext.containerView
-        containerView.addSubview(toVC.view)
+        containerView.addSubview(navigationView.view)
         
         let screen = UIScreen.main.bounds
         

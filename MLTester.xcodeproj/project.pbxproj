@@ -12,6 +12,7 @@
 		D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934FF021FE9C45B0023F6E0 /* AppDelegate.swift */; };
 		D934FF0A1FE9C45B0023F6E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D934FF091FE9C45B0023F6E0 /* Assets.xcassets */; };
 		D934FF0D1FE9C45B0023F6E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D934FF0B1FE9C45B0023F6E0 /* LaunchScreen.storyboard */; };
+		D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */; };
 		D9FC96EA1FF2658800406A06 /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FC96E91FF2658800406A06 /* FirstView.storyboard */; };
 		D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC96EB1FF265B800406A06 /* FirstViewController.swift */; };
 		D9FC96EF1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC96EE1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift */; };
@@ -27,6 +28,7 @@
 		D934FF091FE9C45B0023F6E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D934FF0C1FE9C45B0023F6E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D934FF0E1FE9C45B0023F6E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnimation.swift; sourceTree = "<group>"; };
 		D9FC96E91FF2658800406A06 /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		D9FC96EB1FF265B800406A06 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D9FC96EE1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TransparentNavigationBar.swift"; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		D9AE02EE1FF45E00001EBE5F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 		D9FC96E71FF2653000406A06 /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +147,7 @@
 		D9FC96F01FF272AE00406A06 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				D9AE02EE1FF45E00001EBE5F /* Logic */,
 				D9FC96F51FF2739900406A06 /* View */,
 			);
 			path = MainView;
@@ -228,6 +239,7 @@
 				D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */,
 				D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
+				D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */,
 				D9FC96EF1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift in Sources */,
 				D9FC96F41FF2739100406A06 /* MainViewController.swift in Sources */,
 			);

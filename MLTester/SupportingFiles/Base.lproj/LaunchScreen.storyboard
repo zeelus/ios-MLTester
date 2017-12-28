@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,19 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="LXl-bH-pzI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedCircle" translatesAutoresizingMaskIntoConstraints="NO" id="LXl-bH-pzI">
                                 <rect key="frame" x="112" y="208.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LXl-bH-pzI" secondAttribute="height" multiplier="1:1" id="OIJ-tu-Y0U"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="ABl-qL-WvO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenCircle" translatesAutoresizingMaskIntoConstraints="NO" id="ABl-qL-WvO">
                                 <rect key="frame" x="112" y="258" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ABl-qL-WvO" secondAttribute="height" multiplier="1:1" id="SV5-mN-aEP"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PurpleCyrcle" translatesAutoresizingMaskIntoConstraints="NO" id="1Nk-Ig-eg8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PurpleCircle" translatesAutoresizingMaskIntoConstraints="NO" id="1Nk-Ig-eg8">
                                 <rect key="frame" x="112" y="308.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Nk-Ig-eg8" secondAttribute="height" multiplier="1:1" id="dGI-qh-gyA"/>
@@ -59,8 +59,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GreenCyrcle" width="512" height="512"/>
-        <image name="PurpleCyrcle" width="512" height="512"/>
-        <image name="RedCyrcle" width="512" height="512"/>
+        <image name="GreenCircle" width="512" height="512"/>
+        <image name="PurpleCircle" width="512" height="512"/>
+        <image name="RedCircle" width="512" height="512"/>
     </resources>
 </document>

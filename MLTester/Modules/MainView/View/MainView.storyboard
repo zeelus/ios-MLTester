@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i53-aJ-4HV">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,30 +16,39 @@
             <objects>
                 <viewController id="v6J-Y1-o1q" customClass="MainViewController" customModule="MLTester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayc-jt-pvB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbW-81-1N4">
-                                <rect key="frame" x="112.5" y="158.5" width="150" height="150"/>
+                                <rect key="frame" x="96" y="120" width="128" height="128"/>
                                 <color key="backgroundColor" red="0.87965649366378784" green="0.099619083106517792" blue="0.016547370702028275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lbW-81-1N4" secondAttribute="height" multiplier="1:1" id="NPS-uH-vZT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Real-Time" image="camera_enhance"/>
+                                <connections>
+                                    <action selector="realTimeButtonPressed:" destination="v6J-Y1-o1q" eventType="touchUpInside" id="WpY-8Z-58t"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-kn-gNO">
-                                <rect key="frame" x="16" y="338.5" width="150" height="150"/>
+                                <rect key="frame" x="16" y="300" width="128" height="128"/>
                                 <color key="backgroundColor" red="0.2066674530506134" green="0.94277286529541016" blue="0.35758954286575317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aWe-kn-gNO" secondAttribute="height" multiplier="1:1" id="vaP-fc-xJh"/>
                                 </constraints>
                                 <state key="normal" title="Make photo" image="camera"/>
+                                <connections>
+                                    <action selector="makePhotoButtonPressed:" destination="v6J-Y1-o1q" eventType="touchUpInside" id="rCu-z5-6TL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b03-I2-gju">
-                                <rect key="frame" x="209" y="338.5" width="150" height="150"/>
+                                <rect key="frame" x="176" y="300" width="128" height="128"/>
                                 <color key="backgroundColor" red="0.57742810249328613" green="0.20010364055633545" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Gallery" image="camera_roll"/>
+                                <connections>
+                                    <action selector="galleryButtonPressed:" destination="v6J-Y1-o1q" eventType="touchUpInside" id="qz7-AA-u5e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,7 +82,7 @@
             <objects>
                 <navigationController id="i53-aJ-4HV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cul-zc-iI3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

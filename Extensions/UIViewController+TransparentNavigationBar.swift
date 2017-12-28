@@ -19,6 +19,7 @@ extension UIViewController {
         navigationBar?.isTranslucent = true
         navigationController?.view.backgroundColor = UIColor.clear
         navigationBar?.backgroundColor = UIColor.clear
+        navigationBar?.tintColor = UIColor.white
     }
     
 }
