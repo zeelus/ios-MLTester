@@ -21,7 +21,7 @@ public protocol EasyImageCaptureDelegate {
     func capture(_ imageCapture: EasyImageCapture, isPermission: Bool)
 }
 
-extension EasyImageCaptureDelegate {
+public extension EasyImageCaptureDelegate {
     
     func caputre(_ imageCapture: EasyImageCapture, error: Error?) {
         print("[EasyImageCapture]: Error - \(error?.localizedDescription ?? "Unknow error")")

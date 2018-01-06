@@ -14,6 +14,7 @@ struct StoryboardManager {
     private struct Types {
         private init(){}
         static let getImageCamera = StoryboardElement(storyboardName: "GetImage", type: ImageAnalizeCameraViewController.self)
+        static let reatTime = StoryboardElement(storyboardName: "RealTime", type: RealTimeViewController.self)
     }
     
 }
@@ -30,6 +31,10 @@ extension StoryboardManager {
         let vc = Types.getImageCamera.viewController(withIdentifier: "ImageAnalize")
         vc.inputType = .photoLibrary
         return vc
+    }
+    
+    static func getRealTime() -> RealTimeViewController {
+        return Types.reatTime.viewController()
     }
 }
 

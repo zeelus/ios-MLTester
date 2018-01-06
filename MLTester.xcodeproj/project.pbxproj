@@ -12,10 +12,12 @@
 		D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934FF021FE9C45B0023F6E0 /* AppDelegate.swift */; };
 		D934FF0A1FE9C45B0023F6E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D934FF091FE9C45B0023F6E0 /* Assets.xcassets */; };
 		D934FF0D1FE9C45B0023F6E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D934FF0B1FE9C45B0023F6E0 /* LaunchScreen.storyboard */; };
-		D95311C41FF66EF500A5F096 /* EasyImageCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; };
-		D95311C51FF66EF500A5F096 /* EasyImageCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */; };
 		D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */; };
+		D963754A200142E20012E4FE /* RealTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9637549200142E20012E4FE /* RealTime.storyboard */; };
+		D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963754C200143230012E4FE /* RealTimeViewController.swift */; };
+		D963754E200144990012E4FE /* EasyImageCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; };
+		D963754F200144990012E4FE /* EasyImageCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D96C37ED1FF6B6F80021AFE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D96C37EB1FF6B6F70021AFE0 /* LICENSE */; };
 		D96C37EE1FF6B6F80021AFE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D96C37EC1FF6B6F80021AFE0 /* README.md */; };
 		D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */; };
@@ -30,13 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D95311C61FF66EF500A5F096 /* Embed Frameworks */ = {
+		D9637550200144990012E4FE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D95311C51FF66EF500A5F096 /* EasyImageCapture.framework in Embed Frameworks */,
+				D963754F200144990012E4FE /* EasyImageCapture.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +56,8 @@
 		D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyImageCapture.framework; path = Carthage/Build/iOS/EasyImageCapture.framework; sourceTree = "<group>"; };
 		D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageAnalizer.swift; sourceTree = "<group>"; };
+		D9637549200142E20012E4FE /* RealTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealTime.storyboard; sourceTree = "<group>"; };
+		D963754C200143230012E4FE /* RealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
 		D96C37EB1FF6B6F70021AFE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D96C37EC1FF6B6F80021AFE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManger.swift; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D95311C41FF66EF500A5F096 /* EasyImageCapture.framework in Frameworks */,
+				D963754E200144990012E4FE /* EasyImageCapture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +94,7 @@
 		D928103E1FFBB47D00F20A33 /* RealTime */ = {
 			isa = PBXGroup;
 			children = (
+				D963754B200142ED0012E4FE /* View */,
 			);
 			path = RealTime;
 			sourceTree = "<group>";
@@ -177,6 +182,15 @@
 				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
 			);
 			path = CoreMLModels;
+			sourceTree = "<group>";
+		};
+		D963754B200142ED0012E4FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9637549200142E20012E4FE /* RealTime.storyboard */,
+				D963754C200143230012E4FE /* RealTimeViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D96C37EF1FF6B7430021AFE0 /* Utilities */ = {
@@ -269,7 +283,7 @@
 				D934FEFB1FE9C45B0023F6E0 /* Sources */,
 				D934FEFC1FE9C45B0023F6E0 /* Frameworks */,
 				D934FEFD1FE9C45B0023F6E0 /* Resources */,
-				D95311C61FF66EF500A5F096 /* Embed Frameworks */,
+				D9637550200144990012E4FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +338,7 @@
 				D96C37F71FF6CBD10021AFE0 /* GetImage.storyboard in Resources */,
 				D9FC96EA1FF2658800406A06 /* FirstView.storyboard in Resources */,
 				D9FC96F21FF272EC00406A06 /* MainView.storyboard in Resources */,
+				D963754A200142E20012E4FE /* RealTime.storyboard in Resources */,
 				D934FF0A1FE9C45B0023F6E0 /* Assets.xcassets in Resources */,
 				D96C37ED1FF6B6F80021AFE0 /* LICENSE in Resources */,
 			);
@@ -341,6 +356,7 @@
 				D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */,
 				D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
+				D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */,
 				D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */,
 				D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */,
 				D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */,

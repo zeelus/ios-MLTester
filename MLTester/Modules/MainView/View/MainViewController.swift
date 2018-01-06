@@ -38,8 +38,8 @@ class MainViewController: UIViewController {
     
     @IBAction func realTimeButtonPressed(_ sender: UIButton) {
         self.lastPressedButton = sender
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.red
+        let vc = StoryboardManager.getRealTime()
+        vc.view.backgroundColor = sender.backgroundColor
         self.show(vc, sender: self)
     }
     
