@@ -14,6 +14,13 @@
 		D934FF0D1FE9C45B0023F6E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D934FF0B1FE9C45B0023F6E0 /* LaunchScreen.storyboard */; };
 		D95311C41FF66EF500A5F096 /* EasyImageCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; };
 		D95311C51FF66EF500A5F096 /* EasyImageCapture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */; };
+		D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */; };
+		D96C37ED1FF6B6F80021AFE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D96C37EB1FF6B6F70021AFE0 /* LICENSE */; };
+		D96C37EE1FF6B6F80021AFE0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D96C37EC1FF6B6F80021AFE0 /* README.md */; };
+		D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */; };
+		D96C37F51FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */; };
+		D96C37F71FF6CBD10021AFE0 /* GetImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */; };
 		D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */; };
 		D9FC96EA1FF2658800406A06 /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FC96E91FF2658800406A06 /* FirstView.storyboard */; };
 		D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC96EB1FF265B800406A06 /* FirstViewController.swift */; };
@@ -45,6 +52,13 @@
 		D934FF0C1FE9C45B0023F6E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D934FF0E1FE9C45B0023F6E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyImageCapture.framework; path = Carthage/Build/iOS/EasyImageCapture.framework; sourceTree = "<group>"; };
+		D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageAnalizer.swift; sourceTree = "<group>"; };
+		D96C37EB1FF6B6F70021AFE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D96C37EC1FF6B6F80021AFE0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManger.swift; sourceTree = "<group>"; };
+		D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalizeCameraViewController.swift; sourceTree = "<group>"; };
+		D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GetImage.storyboard; sourceTree = "<group>"; };
 		D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnimation.swift; sourceTree = "<group>"; };
 		D9FC96E91FF2658800406A06 /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		D9FC96EB1FF265B800406A06 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -73,9 +87,18 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		D928103E1FFBB47D00F20A33 /* RealTime */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RealTime;
+			sourceTree = "<group>";
+		};
 		D934FEF61FE9C45B0023F6E0 = {
 			isa = PBXGroup;
 			children = (
+				D96C37EB1FF6B6F70021AFE0 /* LICENSE */,
+				D96C37EC1FF6B6F80021AFE0 /* README.md */,
 				D934FF011FE9C45B0023F6E0 /* MLTester */,
 				D934FF001FE9C45B0023F6E0 /* Products */,
 				D95311BE1FF66E8F00A5F096 /* Frameworks */,
@@ -93,6 +116,8 @@
 		D934FF011FE9C45B0023F6E0 /* MLTester */ = {
 			isa = PBXGroup;
 			children = (
+				D95C8FB81FF7D98E00C9808C /* Models */,
+				D96C37EF1FF6B7430021AFE0 /* Utilities */,
 				D937246B1FEE7FE700813DD4 /* AppSettings */,
 				D937246A1FEE7EB000813DD4 /* SupportingFiles */,
 				D937246C1FEE80CC00813DD4 /* Modules */,
@@ -122,6 +147,8 @@
 		D937246C1FEE80CC00813DD4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D928103E1FFBB47D00F20A33 /* RealTime */,
+				D96C37F21FF6C4240021AFE0 /* GetImage */,
 				D9FC96E71FF2653000406A06 /* FirstView */,
 				D9FC96F01FF272AE00406A06 /* MainView */,
 			);
@@ -134,6 +161,49 @@
 				D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D95C8FB81FF7D98E00C9808C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D95C8FB91FF7D9AE00C9808C /* CoreMLModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D95C8FB91FF7D9AE00C9808C /* CoreMLModels */ = {
+			isa = PBXGroup;
+			children = (
+				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
+			);
+			path = CoreMLModels;
+			sourceTree = "<group>";
+		};
+		D96C37EF1FF6B7430021AFE0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */,
+				D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */,
+			);
+			name = Utilities;
+			path = Utilitiea;
+			sourceTree = "<group>";
+		};
+		D96C37F21FF6C4240021AFE0 /* GetImage */ = {
+			isa = PBXGroup;
+			children = (
+				D96C37F31FF6C5190021AFE0 /* View */,
+			);
+			path = GetImage;
+			sourceTree = "<group>";
+		};
+		D96C37F31FF6C5190021AFE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */,
+				D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D9AE02EE1FF45E00001EBE5F /* Logic */ = {
@@ -249,10 +319,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96C37EE1FF6B6F80021AFE0 /* README.md in Resources */,
 				D934FF0D1FE9C45B0023F6E0 /* LaunchScreen.storyboard in Resources */,
+				D96C37F71FF6CBD10021AFE0 /* GetImage.storyboard in Resources */,
 				D9FC96EA1FF2658800406A06 /* FirstView.storyboard in Resources */,
 				D9FC96F21FF272EC00406A06 /* MainView.storyboard in Resources */,
 				D934FF0A1FE9C45B0023F6E0 /* Assets.xcassets in Resources */,
+				D96C37ED1FF6B6F80021AFE0 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +338,13 @@
 			files = (
 				D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */,
 				D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */,
+				D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */,
 				D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
+				D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */,
+				D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */,
 				D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */,
+				D96C37F51FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift in Sources */,
 				D9FC96EF1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift in Sources */,
 				D9FC96F41FF2739100406A06 /* MainViewController.swift in Sources */,
 			);

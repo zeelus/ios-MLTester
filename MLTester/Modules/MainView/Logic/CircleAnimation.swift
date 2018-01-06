@@ -97,7 +97,5 @@ class CircleAnimationBack: CircleAnimation {
             
         }
         
-        
-        
     }
 }

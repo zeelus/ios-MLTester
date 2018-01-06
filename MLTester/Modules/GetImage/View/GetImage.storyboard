@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fVK-QW-R2O">
+            <objects>
+                <navigationController id="ojj-P0-Rf4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zsg-hf-g2c">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7aB-q4-MOd" kind="relationship" relationship="rootViewController" id="JRI-fy-5mK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b5O-4u-tci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-842" y="154"/>
+        </scene>
+        <!--Image Analize Camera View Controller-->
+        <scene sceneID="1Wz-dC-0wb">
+            <objects>
+                <viewController storyboardIdentifier="ImageAnalize" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7aB-q4-MOd" customClass="ImageAnalizeCameraViewController" customModule="MLTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vYf-AO-GgG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YJT-MD-Pco">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YJT-MD-Pco" secondAttribute="height" multiplier="1:1" id="na9-Xl-uD0"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cr-hc-h8g">
+                                <rect key="frame" x="0.0" y="439" width="375" height="228"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYI-H4-XIG">
+                                        <rect key="frame" x="8" y="8" width="359" height="182"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="wGt-ad-VUy">
+                                        <rect key="frame" x="8" y="8" width="359" height="212"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfL-FT-eCF">
+                                        <rect key="frame" x="8" y="190" width="359" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Wia-e0-tmp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Retake">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retakeButtonPressed:" destination="7aB-q4-MOd" eventType="touchUpInside" id="2B6-mK-LEh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WYI-H4-XIG" secondAttribute="trailing" constant="8" id="4It-EJ-DJJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="qfL-FT-eCF" secondAttribute="bottom" constant="8" id="7AP-k6-2Hz"/>
+                                    <constraint firstItem="wGt-ad-VUy" firstAttribute="leading" secondItem="3Cr-hc-h8g" secondAttribute="leadingMargin" id="BHC-sH-DPi"/>
+                                    <constraint firstAttribute="trailing" secondItem="qfL-FT-eCF" secondAttribute="trailing" constant="8" id="EdT-PI-fS0"/>
+                                    <constraint firstItem="qfL-FT-eCF" firstAttribute="leading" secondItem="3Cr-hc-h8g" secondAttribute="leading" constant="8" id="HxG-Pd-Kxe"/>
+                                    <constraint firstItem="wGt-ad-VUy" firstAttribute="top" secondItem="3Cr-hc-h8g" secondAttribute="topMargin" id="Vpz-In-xqt"/>
+                                    <constraint firstItem="WYI-H4-XIG" firstAttribute="top" secondItem="3Cr-hc-h8g" secondAttribute="top" constant="8" id="ZTN-FK-EcE"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="wGt-ad-VUy" secondAttribute="trailing" id="c5U-ha-2fJ"/>
+                                    <constraint firstItem="qfL-FT-eCF" firstAttribute="top" secondItem="WYI-H4-XIG" secondAttribute="bottom" id="j8t-VL-Wua"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="wGt-ad-VUy" secondAttribute="bottom" id="nLc-t1-w0P"/>
+                                    <constraint firstItem="WYI-H4-XIG" firstAttribute="leading" secondItem="3Cr-hc-h8g" secondAttribute="leading" constant="8" id="pIN-Gj-q7l"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2066674530506134" green="0.94277286529541016" blue="0.35758954286575317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Cr-hc-h8g" firstAttribute="top" secondItem="YJT-MD-Pco" secondAttribute="bottom" id="0vV-sB-38H"/>
+                            <constraint firstItem="YJT-MD-Pco" firstAttribute="leading" secondItem="rlu-qi-feH" secondAttribute="leading" id="Oqd-yh-Vey"/>
+                            <constraint firstItem="YJT-MD-Pco" firstAttribute="trailing" secondItem="rlu-qi-feH" secondAttribute="trailing" id="Rxk-nS-8O3"/>
+                            <constraint firstItem="3Cr-hc-h8g" firstAttribute="leading" secondItem="rlu-qi-feH" secondAttribute="leading" id="WlK-yo-s5G"/>
+                            <constraint firstItem="rlu-qi-feH" firstAttribute="bottom" secondItem="3Cr-hc-h8g" secondAttribute="bottom" id="dI7-0e-q6h"/>
+                            <constraint firstItem="YJT-MD-Pco" firstAttribute="top" secondItem="rlu-qi-feH" secondAttribute="top" id="vTz-5J-l9o"/>
+                            <constraint firstItem="rlu-qi-feH" firstAttribute="trailing" secondItem="3Cr-hc-h8g" secondAttribute="trailing" id="xFe-jf-2SE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rlu-qi-feH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DmU-eH-zRN"/>
+                    <connections>
+                        <outlet property="clasyficationLabel" destination="WYI-H4-XIG" id="2RC-nw-Ymx"/>
+                        <outlet property="imageView" destination="YJT-MD-Pco" id="QLF-qd-0vX"/>
+                        <outlet property="indicator" destination="wGt-ad-VUy" id="RKK-VG-NGW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAF-0O-4o2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111.2" y="154.27286356821591"/>
+        </scene>
+    </scenes>
+</document>

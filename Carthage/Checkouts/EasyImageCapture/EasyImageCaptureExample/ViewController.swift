@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EasyImageCapture
 import AVFoundation
 
 class ViewController: UIViewController {
@@ -15,11 +14,14 @@ class ViewController: UIViewController {
     let imageCapture = EasyImageCapture()
     @IBOutlet weak var imageView: UIImageView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageCapture.delegate = self
     }
-    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -29,17 +31,16 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EasyImageCaptureDelegate {
-    func capture(frame: CMSampleBuffer, atTime time: TimeInterval) {
-        guard let pixelbuffer = CMSampleBufferGetImageBuffer(frame) else { return }
-        let ciImage = CIImage(cvImageBuffer: pixelbuffer)
-        DispatchQueue.main.async {
-            self.imageView.image = UIImage(ciImage: ciImage)
+    
+    func capture(_ imageCapture: EasyImageCapture, isPermission: Bool) {
+        if !isPermission {
+            imageCapture.askForPermission()
         }
-        
+    }
+
+    func capture(_ imageCapture: EasyImageCapture, frame: CIImage, atTime time: TimeInterval) {
+        self.imageView.image = UIImage(ciImage: frame)
     }
     
-    func caputre(error: Error?) {
-        print(error)
-    }
 }
 

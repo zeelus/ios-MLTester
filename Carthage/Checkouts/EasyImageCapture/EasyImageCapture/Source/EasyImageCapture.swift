@@ -15,55 +15,75 @@ public class EasyImageCapture: NSObject {
     private let cameraQueue = DispatchQueue(label: "cameraQueue")
     private let captureSession = AVCaptureSession()
     
-    public var delegate: EasyImageCaptureDelegate? = nil
+    private var _delegate: EasyImageCaptureDelegate? = nil
+    public var delegate: EasyImageCaptureDelegate? {
+        
+        set {
+            
+            self._delegate = newValue
+            
+            if self._delegate != nil {
+                self.checkPermission()
+            }
+            
+        }
+        
+        get{
+            return self._delegate
+        }
+        
+    }
     
     private var frame: CMSampleBuffer? = nil
     
     private var isPermission = false
+    private var isSetup = false
     
     override public init() {
         super.init()
-        self.checkPermission()
-        self.cameraQueue.sync {
-            self.setupCameraCapture()
-            self.captureSession.startRunning()
-        }
+        self.stop()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     private func checkPermission() {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            self.isPermission = true
-        case .notDetermined:
-//            AVCaptureDevice.requestAccess(for: .video, completionHandler: {[weak self] (permission) in
-//                self?.isPermission = permission
-//            })
-            self.askForPermission()
-        default:
-            self.isPermission = false
-            self.delegate?.caputre(error: EasyImageCaptureError.accessDenied)
+        DispatchQueue.main.async {
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .authorized:
+                self.isPermission = true
+                self.delegate?.capture(self, isPermission: true)
+                self.setupCameraCapture()
+                self.resume()
+            case .notDetermined:
+                self.delegate?.capture(self, isPermission: false)
+            default:
+                self.isPermission = false
+                self.delegate?.caputre(self, error: EasyImageCaptureError.accessDenied)
+            }
         }
+
     }
     
-    private func askForPermission() {
-        self.cameraQueue.suspend()
+    public func askForPermission() {
         AVCaptureDevice.requestAccess(for: .video) {[weak self] (isPermission) in
-            self?.isPermission = isPermission
-            self?.cameraQueue.resume()
+                self?.isPermission = isPermission
+                if isPermission {
+                    self?.checkPermission()
+                }
         }
     }
     
     private func setupCameraCapture() {
-        guard self.isPermission else { return }
+        guard self.isPermission && !self.isSetup else { return }
         self.captureSession.sessionPreset = .medium
         
         guard let captureDevice = self.selectCaptureDevice() else { return }
+        
+        do {
+            try captureDevice.lockForConfiguration()
+        } catch {
+            print("Capture device lock error")
+        }
+        
         guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         self.captureSession.addInput(captureDeviceInput)
         
@@ -75,30 +95,31 @@ public class EasyImageCapture: NSObject {
         let deviceOrientation = UIDevice.current.orientation
         connection?.videoOrientation = deviceOrientation.getAVOrietation
         
+        self.isSetup = true
     }
     
     private func selectCaptureDevice() -> AVCaptureDevice? {
-        let devices: [AVCaptureDevice] = AVCaptureDevice.DiscoverySession.init(deviceTypes: [.builtInDualCamera, .builtInTelephotoCamera, .builtInWideAngleCamera], mediaType: .video, position: .back).devices
+        
+        var types: [AVCaptureDevice.DeviceType] = [.builtInTelephotoCamera, .builtInWideAngleCamera]
+        
+        if #available(iOS 10.2, *) {
+            types.append(.builtInDualCamera)
+        }
+        
+        let devices: [AVCaptureDevice] = AVCaptureDevice.DiscoverySession.init(deviceTypes: types, mediaType: .video, position: .back).devices
         return devices.first
     }
     
-    func resume() {
+    public func resume() {
         self.cameraQueue.sync {
             self.captureSession.startRunning()
         }
     }
     
-    func stop() {
+    public func stop() {
         self.cameraQueue.sync {
             self.captureSession.stopRunning()
         }
-    }
-    
-    @objc func orientationChange() {
-        print("Chane orientation")
-        let connection = self.captureSession.outputs.first?.connection(with: .video)
-        let deviceOrientation = UIDevice.current.orientation
-        connection?.videoOrientation = deviceOrientation.getAVOrietation
     }
     
 }
@@ -106,8 +127,9 @@ public class EasyImageCapture: NSObject {
 extension EasyImageCapture : AVCaptureVideoDataOutputSampleBufferDelegate {
     
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
         self.frame = sampleBuffer
-        self.delegate?.capture(frame: sampleBuffer, atTime: Date().timeIntervalSince1970)
+        self.delegate?.capture(self, frame: sampleBuffer, atTime: Date().timeIntervalSince1970)
         
     }
     
@@ -129,3 +151,4 @@ fileprivate extension UIDeviceOrientation {
         }
     }
 }
+

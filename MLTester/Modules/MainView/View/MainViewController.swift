@@ -45,12 +45,16 @@ class MainViewController: UIViewController {
     
     @IBAction func makePhotoButtonPressed(_ sender: UIButton) {
         self.lastPressedButton = sender
-        self.show(UIViewController(), sender: self)
+        let vc = StoryboardManager.getImageCamera()
+        vc.view.backgroundColor = sender.backgroundColor
+        self.show(vc, sender: self)
     }
     
     @IBAction func galleryButtonPressed(_ sender: UIButton) {
         self.lastPressedButton = sender
-        self.show(UIViewController(), sender: self)
+        let vc = StoryboardManager.getImageGallery()
+        vc.view.backgroundColor = sender.backgroundColor
+        self.show(vc, sender: self)
     }
 
 }
@@ -60,7 +64,6 @@ extension MainViewController: UINavigationControllerDelegate {
         guard let button = self.lastPressedButton else { return nil }
 
         if fromVC  is MainViewController {
-            //self.navigationController?.delegate = nil
             return CircleAnimation(lastPressedButton: button)
         }
         
