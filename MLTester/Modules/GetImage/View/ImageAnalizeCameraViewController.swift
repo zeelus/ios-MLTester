@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Vision
 
 class ImageAnalizeCameraViewController: UIViewController {
     
@@ -17,16 +16,18 @@ class ImageAnalizeCameraViewController: UIViewController {
     @IBOutlet weak var clasyficationLabel: UILabel!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    private var imageAnalizer: StaticImageAnalizer? = nil
+    private var imageAnalizer: ImageAnalyzer? = nil
 
     var pickedImage: UIImage? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let model = try? VNCoreMLModel(for: Inceptionv3().model){
-            self.imageAnalizer = StaticImageAnalizer(model: model)
+        
+        if let model = CoreMLProvider.instance.getCurrentModel() {
+            self.imageAnalizer = ImageAnalyzer(model: model)
             self.imageAnalizer?.delegate = self
         }
+        
     }
     
     fileprivate func showImagePicker() {
@@ -82,11 +83,16 @@ extension ImageAnalizeCameraViewController: UIImagePickerControllerDelegate, UIN
     
 }
 
-extension ImageAnalizeCameraViewController: StaticImageAnlalizerDelegate {
+extension ImageAnalizeCameraViewController: ImageAnlalizerDelegate {
     
-    func imageClasyfication(name: String) {
+    
+    func imageAnalyzer(_ imageAnalyzer: ImageAnalyzer, clasyfication name: String, percent value: Int) {
         self.indicator.stopAnimating()
         self.clasyficationLabel.text = name
+    }
+    
+    func imageAnalyzer(_ imageAnalyzer: ImageAnalyzer, error: Error) {
+        print(error)
     }
     
 }

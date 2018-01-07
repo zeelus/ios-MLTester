@@ -12,8 +12,9 @@
 		D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934FF021FE9C45B0023F6E0 /* AppDelegate.swift */; };
 		D934FF0A1FE9C45B0023F6E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D934FF091FE9C45B0023F6E0 /* Assets.xcassets */; };
 		D934FF0D1FE9C45B0023F6E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D934FF0B1FE9C45B0023F6E0 /* LaunchScreen.storyboard */; };
+		D947F4832002998D00E48465 /* CoreMLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947F4822002998D00E48465 /* CoreMLProvider.swift */; };
+		D947F4852002A07700E48465 /* ImageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947F4842002A07700E48465 /* ImageAnalyzer.swift */; };
 		D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */; };
-		D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */; };
 		D963754A200142E20012E4FE /* RealTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9637549200142E20012E4FE /* RealTime.storyboard */; };
 		D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963754C200143230012E4FE /* RealTimeViewController.swift */; };
 		D963754E200144990012E4FE /* EasyImageCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */; };
@@ -53,9 +54,10 @@
 		D934FF091FE9C45B0023F6E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D934FF0C1FE9C45B0023F6E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D934FF0E1FE9C45B0023F6E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D947F4822002998D00E48465 /* CoreMLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLProvider.swift; sourceTree = "<group>"; };
+		D947F4842002A07700E48465 /* ImageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalyzer.swift; sourceTree = "<group>"; };
 		D95311BF1FF66E9000A5F096 /* EasyImageCapture.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyImageCapture.framework; path = Carthage/Build/iOS/EasyImageCapture.framework; sourceTree = "<group>"; };
 		D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
-		D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticImageAnalizer.swift; sourceTree = "<group>"; };
 		D9637549200142E20012E4FE /* RealTime.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealTime.storyboard; sourceTree = "<group>"; };
 		D963754C200143230012E4FE /* RealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeViewController.swift; sourceTree = "<group>"; };
 		D96C37EB1FF6B6F70021AFE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
+				D947F4822002998D00E48465 /* CoreMLProvider.swift */,
 			);
 			path = CoreMLModels;
 			sourceTree = "<group>";
@@ -197,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */,
-				D95C8FBC1FF7DBB700C9808C /* StaticImageAnalizer.swift */,
+				D947F4842002A07700E48465 /* ImageAnalyzer.swift */,
 			);
 			name = Utilities;
 			path = Utilitiea;
@@ -353,12 +356,13 @@
 			files = (
 				D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */,
 				D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */,
-				D95C8FBD1FF7DBB700C9808C /* StaticImageAnalizer.swift in Sources */,
 				D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */,
+				D947F4832002998D00E48465 /* CoreMLProvider.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
 				D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */,
 				D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */,
 				D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */,
+				D947F4852002A07700E48465 /* ImageAnalyzer.swift in Sources */,
 				D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */,
 				D96C37F51FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift in Sources */,
 				D9FC96EF1FF26FA900406A06 /* UIViewController+TransparentNavigationBar.swift in Sources */,

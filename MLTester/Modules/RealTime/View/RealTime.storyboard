@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,18 +21,57 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1KX-1i-6gx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWf-1I-Eht">
+                                <rect key="frame" x="16" y="547" width="343" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WON-5b-bH6">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="SfT-cE-j3Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="243" height="100"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="GMI-3b-UBc">
+                                                <rect key="frame" x="243" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="mq8-Yw-y4l"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.054901961237192154" blue="0.0039215688593685627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WON-5b-bH6" secondAttribute="trailing" id="AcC-nt-zdp"/>
+                                    <constraint firstItem="WON-5b-bH6" firstAttribute="top" secondItem="wWf-1I-Eht" secondAttribute="top" id="NUM-wF-Nzt"/>
+                                    <constraint firstItem="WON-5b-bH6" firstAttribute="leading" secondItem="wWf-1I-Eht" secondAttribute="leading" id="aHh-6e-Ptb"/>
+                                    <constraint firstAttribute="bottom" secondItem="WON-5b-bH6" secondAttribute="bottom" id="yvE-CB-dKG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wWf-1I-Eht" firstAttribute="leading" secondItem="X8Q-xw-BhF" secondAttribute="leading" constant="16" id="CZg-JL-A7X"/>
+                            <constraint firstItem="X8Q-xw-BhF" firstAttribute="bottom" secondItem="wWf-1I-Eht" secondAttribute="bottom" constant="20" id="Hlx-pX-88v"/>
                             <constraint firstItem="1KX-1i-6gx" firstAttribute="trailing" secondItem="X8Q-xw-BhF" secondAttribute="trailing" id="csD-BF-spt"/>
                             <constraint firstItem="1KX-1i-6gx" firstAttribute="leading" secondItem="X8Q-xw-BhF" secondAttribute="leading" id="ddQ-6D-pm5"/>
+                            <constraint firstItem="wWf-1I-Eht" firstAttribute="height" secondItem="1KX-1i-6gx" secondAttribute="height" multiplier="0.15" id="eCn-gS-hWH"/>
                             <constraint firstItem="1KX-1i-6gx" firstAttribute="bottom" secondItem="X8Q-xw-BhF" secondAttribute="bottom" id="gZY-Qg-07H"/>
+                            <constraint firstItem="X8Q-xw-BhF" firstAttribute="trailing" secondItem="wWf-1I-Eht" secondAttribute="trailing" constant="16" id="k3p-Db-h8x"/>
                             <constraint firstItem="1KX-1i-6gx" firstAttribute="top" secondItem="ZuG-iz-T6W" secondAttribute="top" id="oJF-77-MKd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X8Q-xw-BhF"/>
                     </view>
                     <connections>
+                        <outlet property="classificationName" destination="SfT-cE-j3Y" id="6Fo-S2-fXn"/>
                         <outlet property="imageView" destination="1KX-1i-6gx" id="M7O-Nn-65R"/>
+                        <outlet property="infoView" destination="wWf-1I-Eht" id="X0F-tp-43t"/>
+                        <outlet property="percentValue" destination="GMI-3b-UBc" id="JGi-f1-emu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8d-cI-M16" userLabel="First Responder" sceneMemberID="firstResponder"/>
