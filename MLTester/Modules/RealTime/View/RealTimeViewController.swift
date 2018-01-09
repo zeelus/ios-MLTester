@@ -17,21 +17,34 @@ class RealTimeViewController: UIViewController {
     @IBOutlet weak var percentValue: UILabel!
     
     let imageCapture = EasyImageCapture()
-    var imageAnalyzer: ImageAnalyzer! = nil
+    var imageAnalyzer: ImageAnalyzer? = nil
     
     var lastTime: TimeInterval = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupDelegates()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.removeDelegates()
     }
     
     fileprivate func setupDelegates() {
-        imageCapture.delegate = self
+        self.imageCapture.delegate = self
         if let model = CoreMLProvider.instance.getCurrentModel() {
             self.imageAnalyzer = ImageAnalyzer(model: model)
-            self.imageAnalyzer.delegate = self
+            self.imageAnalyzer?.delegate = self
         }
+    }
+    
+    private func removeDelegates() {
+        self.imageCapture.delegate = nil
+        self.imageAnalyzer?.delegate = nil
+        self.imageAnalyzer = nil
     }
     
     override func viewWillLayoutSubviews() {
@@ -40,7 +53,7 @@ class RealTimeViewController: UIViewController {
     
     private func setupInfoView() {
         self.infoView.backgroundColor = self.view.backgroundColor
-        self.infoView.layer.cornerRadius = self.infoView.bounds.height / 2
+        self.infoView.layer.cornerRadius = self.infoView.bounds.height / 3
     }
 
 }
@@ -53,8 +66,8 @@ extension RealTimeViewController : EasyImageCaptureDelegate {
         
         let timeInterval = time - self.lastTime
         
-        if !self.imageAnalyzer.isCalculating && timeInterval >= 1.0 {
-            self.imageAnalyzer.analize(image: image)
+        if !(self.imageAnalyzer?.isCalculating ?? true) && timeInterval >= 1.0 {
+            self.imageAnalyzer?.analize(image: image)
             self.lastTime = time
         }
         

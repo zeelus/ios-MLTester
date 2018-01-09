@@ -48,24 +48,28 @@ class ImageAnalyzer {
     
     public func analize(image: UIImage) {
         
-        guard self.isCalculating == false && self.isSetup == true else { return }
-        self.isCalculating = true
-        
-        guard  let request = self.request else { return }
-        
-        var handler: VNImageRequestHandler? = nil
-        
-        if let ciImage = image.ciImage {
-            handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
-        } else if let cgImage = image.cgImage {
-            handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        DispatchQueue.global(qos: .background).async {
+            
+            guard self.isCalculating == false && self.isSetup == true else { return }
+            self.isCalculating = true
+            
+            guard  let request = self.request else { return }
+            
+            var handler: VNImageRequestHandler? = nil
+            
+            if let ciImage = image.ciImage {
+                handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+            } else if let cgImage = image.cgImage {
+                handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+            }
+            
+            do {
+                try handler?.perform([request])
+            } catch {
+                print("Perform error")
+            }
         }
         
-        do {
-            try handler?.perform([request])
-        } catch {
-            print("Perform error")
-        }
     }
     
     fileprivate func new(_ observation: VNClassificationObservation) {
