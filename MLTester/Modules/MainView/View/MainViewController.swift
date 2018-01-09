@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var purpleButton: UIButton!
+    @IBOutlet weak var listButtonView: UIView!
+    @IBOutlet weak var listButton: UIButton!
     
     private weak var lastPressedButton: UIButton?
     
@@ -34,6 +36,8 @@ class MainViewController: UIViewController {
         self.redButton.asCircle()
         self.greenButton.asCircle()
         self.purpleButton.asCircle()
+        self.setCornerToListButtonView()
+        self.addInAnimationToListButtonView()
     }
     
     @IBAction func realTimeButtonPressed(_ sender: UIButton) {
@@ -55,6 +59,27 @@ class MainViewController: UIViewController {
         let vc = StoryboardManager.getImageGallery()
         vc.view.backgroundColor = sender.backgroundColor
         self.show(vc, sender: self)
+    }
+    
+    @IBAction func listButtonPressed(_ sender: Any) {
+        let vc = StoryboardManager.getCoreMLList()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+    
+    private func setCornerToListButtonView() {
+        self.listButtonView.layer.cornerRadius = self.listButtonView.layer.bounds.height / 3
+        self.listButtonView.layer.masksToBounds = true
+    }
+    
+    private func addInAnimationToListButtonView() {
+        let position = self.listButtonView.center
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.fromValue = CGPoint(x: position.x, y: position.y + 250 )
+        animation.toValue = position
+        animation.duration = 1.5
+        animation.repeatCount = 1
+        self.listButtonView.layer.add(animation, forKey: "position")
     }
 
 }

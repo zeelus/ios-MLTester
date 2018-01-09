@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 
 struct StoryboardManager {
+    private init() {}
     
     private struct Types {
         private init(){}
         static let getImageCamera = StoryboardElement(storyboardName: "GetImage", type: ImageAnalizeCameraViewController.self)
         static let reatTime = StoryboardElement(storyboardName: "RealTime", type: RealTimeViewController.self)
+        static let listView = StoryboardElement(storyboardName: "ListView", type: CoreMLListViewController.self)
     }
     
 }
@@ -36,6 +38,11 @@ extension StoryboardManager {
     static func getRealTime() -> RealTimeViewController {
         return Types.reatTime.viewController()
     }
+    
+    static func getCoreMLList() -> CoreMLListViewController {
+        return Types.listView.viewController()
+    }
+    
 }
 
 fileprivate struct StoryboardElement<T: UIViewController> {

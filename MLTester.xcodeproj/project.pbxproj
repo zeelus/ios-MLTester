@@ -25,6 +25,7 @@
 		D96C37F51FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */; };
 		D96C37F71FF6CBD10021AFE0 /* GetImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */; };
 		D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */; };
+		D9BEB23020054D0F005442E4 /* CoreMLListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEB22F20054D0F005442E4 /* CoreMLListViewController.swift */; };
 		D9E22EF720040526007DC619 /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E22EF620040526007DC619 /* ListView.storyboard */; };
 		D9FC96EA1FF2658800406A06 /* FirstView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FC96E91FF2658800406A06 /* FirstView.storyboard */; };
 		D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FC96EB1FF265B800406A06 /* FirstViewController.swift */; };
@@ -67,6 +68,7 @@
 		D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalizeCameraViewController.swift; sourceTree = "<group>"; };
 		D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GetImage.storyboard; sourceTree = "<group>"; };
 		D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnimation.swift; sourceTree = "<group>"; };
+		D9BEB22F20054D0F005442E4 /* CoreMLListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLListViewController.swift; sourceTree = "<group>"; };
 		D9E22EF620040526007DC619 /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
 		D9FC96E91FF2658800406A06 /* FirstView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstView.storyboard; sourceTree = "<group>"; };
 		D9FC96EB1FF265B800406A06 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 		D95C8FB91FF7D9AE00C9808C /* CoreMLModels */ = {
 			isa = PBXGroup;
 			children = (
-				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
+				D9BEB22E2005487D005442E4 /* Models */,
 				D947F4822002998D00E48465 /* CoreMLProvider.swift */,
 			);
 			path = CoreMLModels;
@@ -234,6 +236,14 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		D9BEB22E2005487D005442E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D9E22EF4200404F3007DC619 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E22EF620040526007DC619 /* ListView.storyboard */,
+				D9BEB22F20054D0F005442E4 /* CoreMLListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +391,7 @@
 				D947F4832002998D00E48465 /* CoreMLProvider.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
 				D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */,
+				D9BEB23020054D0F005442E4 /* CoreMLListViewController.swift in Sources */,
 				D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */,
 				D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */,
 				D947F4852002A07700E48465 /* ImageAnalyzer.swift in Sources */,

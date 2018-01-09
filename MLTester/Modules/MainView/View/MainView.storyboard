@@ -59,6 +59,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="listButtonPressed:" destination="v6J-Y1-o1q" eventType="touchUpInside" id="6vW-eF-hf1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,6 +95,8 @@
                     <navigationItem key="navigationItem" id="PwY-On-jON"/>
                     <connections>
                         <outlet property="greenButton" destination="aWe-kn-gNO" id="oAe-nB-DDY"/>
+                        <outlet property="listButton" destination="TaV-Yz-BGB" id="2Y2-Dz-ueh"/>
+                        <outlet property="listButtonView" destination="gAy-e7-hxj" id="NxK-b9-1V6"/>
                         <outlet property="purpleButton" destination="b03-I2-gju" id="zHx-v1-GmW"/>
                         <outlet property="redButton" destination="lbW-81-1N4" id="yjt-Ud-w04"/>
                     </connections>

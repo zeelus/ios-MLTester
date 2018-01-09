@@ -5,36 +5,90 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--CoreML List View Controller-->
         <scene sceneID="mJH-bJ-PyW">
             <objects>
-                <viewController id="TVV-Hw-1C2" sceneMemberID="viewController">
+                <viewController id="TVV-Hw-1C2" customClass="CoreMLListViewController" customModule="MLTester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RKy-Cn-CZd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-Xe-Ej2">
-                                <rect key="frame" x="40" y="50" width="295" height="587"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ic-bm-Q0h">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="61.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiX-mh-3Lp">
+                                                <rect key="frame" x="8" y="8" width="46" height="45.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uiX-mh-3Lp" secondAttribute="height" multiplier="46:45" id="jvH-Bk-v2V"/>
+                                                </constraints>
+                                                <state key="normal" image="exit"/>
+                                                <connections>
+                                                    <action selector="exitButtonPressed:" destination="TVV-Hw-1C2" eventType="touchUpInside" id="AT9-T5-kfd"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Load CoreML Models" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-8O-rdo">
+                                                <rect key="frame" x="8" y="0.0" width="327" height="61.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5ET-8O-rdo" firstAttribute="top" secondItem="4Ic-bm-Q0h" secondAttribute="top" id="7UX-wA-VVm"/>
+                                            <constraint firstItem="uiX-mh-3Lp" firstAttribute="leading" secondItem="4Ic-bm-Q0h" secondAttribute="leading" constant="8" id="9k0-RY-IU4"/>
+                                            <constraint firstAttribute="bottom" secondItem="5ET-8O-rdo" secondAttribute="bottom" id="DZz-hY-OKt"/>
+                                            <constraint firstAttribute="trailing" secondItem="5ET-8O-rdo" secondAttribute="trailing" id="Kw9-f2-nLn"/>
+                                            <constraint firstItem="5ET-8O-rdo" firstAttribute="leading" secondItem="4Ic-bm-Q0h" secondAttribute="leading" constant="8" id="N9x-vA-tyV"/>
+                                            <constraint firstAttribute="bottom" secondItem="uiX-mh-3Lp" secondAttribute="bottom" constant="8" id="emh-H8-x2h"/>
+                                            <constraint firstItem="uiX-mh-3Lp" firstAttribute="top" secondItem="4Ic-bm-Q0h" secondAttribute="top" constant="8" id="lHn-wi-nw7"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AR6-Pd-WS1">
+                                        <rect key="frame" x="0.0" y="61.5" width="335" height="545.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4Ic-bm-Q0h" firstAttribute="leading" secondItem="vuj-Xe-Ej2" secondAttribute="leading" id="69M-e1-Rzr"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ic-bm-Q0h" secondAttribute="trailing" id="Cc0-fk-atu"/>
+                                    <constraint firstItem="4Ic-bm-Q0h" firstAttribute="top" secondItem="vuj-Xe-Ej2" secondAttribute="top" id="GGY-hT-CtT"/>
+                                    <constraint firstAttribute="bottom" secondItem="AR6-Pd-WS1" secondAttribute="bottom" id="Hri-le-OQw"/>
+                                    <constraint firstItem="4Ic-bm-Q0h" firstAttribute="height" secondItem="vuj-Xe-Ej2" secondAttribute="height" multiplier="0.1" id="Je1-oE-vhe"/>
+                                    <constraint firstItem="AR6-Pd-WS1" firstAttribute="leading" secondItem="vuj-Xe-Ej2" secondAttribute="leading" id="Vya-FS-iLC"/>
+                                    <constraint firstItem="AR6-Pd-WS1" firstAttribute="top" secondItem="4Ic-bm-Q0h" secondAttribute="bottom" id="mfz-cj-bVB"/>
+                                    <constraint firstAttribute="trailing" secondItem="AR6-Pd-WS1" secondAttribute="trailing" id="pw8-iU-9h8"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vuj-Xe-Ej2" firstAttribute="leading" secondItem="CDf-m3-gAR" secondAttribute="leading" constant="40" id="Alg-k0-9kn"/>
-                            <constraint firstItem="vuj-Xe-Ej2" firstAttribute="top" secondItem="CDf-m3-gAR" secondAttribute="top" constant="30" id="Miv-Qg-tw5"/>
-                            <constraint firstItem="CDf-m3-gAR" firstAttribute="trailing" secondItem="vuj-Xe-Ej2" secondAttribute="trailing" constant="40" id="Snl-Oa-atP"/>
-                            <constraint firstItem="CDf-m3-gAR" firstAttribute="bottom" secondItem="vuj-Xe-Ej2" secondAttribute="bottom" constant="30" id="wkh-Y4-Qih"/>
+                            <constraint firstItem="vuj-Xe-Ej2" firstAttribute="leading" secondItem="CDf-m3-gAR" secondAttribute="leading" constant="20" id="Alg-k0-9kn"/>
+                            <constraint firstItem="vuj-Xe-Ej2" firstAttribute="top" secondItem="CDf-m3-gAR" secondAttribute="top" constant="20" id="Miv-Qg-tw5"/>
+                            <constraint firstItem="CDf-m3-gAR" firstAttribute="trailing" secondItem="vuj-Xe-Ej2" secondAttribute="trailing" constant="20" id="Snl-Oa-atP"/>
+                            <constraint firstItem="CDf-m3-gAR" firstAttribute="bottom" secondItem="vuj-Xe-Ej2" secondAttribute="bottom" constant="20" id="wkh-Y4-Qih"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CDf-m3-gAR"/>
                     </view>
+                    <connections>
+                        <outlet property="mainView" destination="vuj-Xe-Ej2" id="0gP-R1-o5B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dB-rY-UW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exit" width="48" height="48"/>
+    </resources>
 </document>
