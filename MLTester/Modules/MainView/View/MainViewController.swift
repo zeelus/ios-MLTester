@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     
     private weak var lastPressedButton: UIButton?
     
+    private var isLoad = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTransparentNavigationBar()
@@ -29,6 +31,17 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationController?.delegate = self
+        
+        if !self.isLoad {
+            self.addInAnimationToListButtonView()
+            self.isLoad = true
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let modelName = CoreMLProvider.instance.getSelectedModel()?.name
+        self.listButton.setTitle(modelName, for: .normal)
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,7 +50,6 @@ class MainViewController: UIViewController {
         self.greenButton.asCircle()
         self.purpleButton.asCircle()
         self.setCornerToListButtonView()
-        self.addInAnimationToListButtonView()
     }
     
     @IBAction func realTimeButtonPressed(_ sender: UIButton) {
@@ -64,6 +76,10 @@ class MainViewController: UIViewController {
     @IBAction func listButtonPressed(_ sender: Any) {
         let vc = StoryboardManager.getCoreMLList()
         vc.modalPresentationStyle = .overCurrentContext
+        vc.dismissBlock = { [weak self] in
+            let modelName = CoreMLProvider.instance.getSelectedModel()?.name
+            self?.listButton.setTitle(modelName, for: .normal)
+        }
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
@@ -73,11 +89,12 @@ class MainViewController: UIViewController {
     }
     
     private func addInAnimationToListButtonView() {
+        //self.listButtonView.alpha = 0.0
         let position = self.listButtonView.center
         let animation = CABasicAnimation(keyPath: "position")
         animation.fromValue = CGPoint(x: position.x, y: position.y + 250 )
         animation.toValue = position
-        animation.duration = 1.5
+        animation.duration = 1.0
         animation.repeatCount = 1
         self.listButtonView.layer.add(animation, forKey: "position")
     }
@@ -98,4 +115,5 @@ extension MainViewController: UINavigationControllerDelegate {
         
         return nil
     }
+    
 }

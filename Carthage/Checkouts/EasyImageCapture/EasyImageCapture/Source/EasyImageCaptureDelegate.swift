@@ -19,6 +19,8 @@ public protocol EasyImageCaptureDelegate {
     func capture(_ imageCapture: EasyImageCapture, frame: CIImage, atTime time: TimeInterval)
     
     func capture(_ imageCapture: EasyImageCapture, isPermission: Bool)
+    
+    var preferredCameraInput: EasyImageInputCameraType { get }
 }
 
 public extension EasyImageCaptureDelegate {
@@ -36,5 +38,9 @@ public extension EasyImageCaptureDelegate {
     }
     
     func capture(_ imageCapture: EasyImageCapture, frame: UIImage, atTime time: TimeInterval) { }
+    
+    var preferredCameraInput: EasyImageInputCameraType {
+        return .wideAngle
+    }
     
 }

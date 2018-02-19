@@ -19,6 +19,8 @@ class ImageAnalizeCameraViewController: UIViewController {
     private var imageAnalizer: ImageAnalyzer? = nil
 
     var pickedImage: UIImage? = nil
+    
+    private var isCancle = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,11 @@ class ImageAnalizeCameraViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if self.isCancle {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
         if self.pickedImage == nil {
             self.showImagePicker()
         }
@@ -79,6 +86,10 @@ extension ImageAnalizeCameraViewController: UIImagePickerControllerDelegate, UIN
                 self?.analizeImage()
             }
         )
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.isCancle = true
     }
     
 }

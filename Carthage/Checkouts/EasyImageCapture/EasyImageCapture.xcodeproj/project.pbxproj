@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D923DC86201E635F0011D155 /* EasyImageInputCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D923DC85201E635F0011D155 /* EasyImageInputCameraType.swift */; };
+		D923DC87201E64070011D155 /* EasyImageInputCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D923DC85201E635F0011D155 /* EasyImageInputCameraType.swift */; };
 		D947B3D21FCB4341007E8116 /* EasyImageCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = D947B3D01FCB4341007E8116 /* EasyImageCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D947B3DF1FCB4446007E8116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947B3DE1FCB4446007E8116 /* AppDelegate.swift */; };
 		D947B3E11FCB4446007E8116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D947B3E01FCB4446007E8116 /* ViewController.swift */; };
@@ -22,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D923DC85201E635F0011D155 /* EasyImageInputCameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyImageInputCameraType.swift; sourceTree = "<group>"; };
 		D947B3CD1FCB4341007E8116 /* EasyImageCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyImageCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D947B3D01FCB4341007E8116 /* EasyImageCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyImageCapture.h; sourceTree = "<group>"; };
 		D947B3D11FCB4341007E8116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 				D947B3EF1FCB47C9007E8116 /* EasyImageCapture.swift */,
 				D947B3F41FCB4BFE007E8116 /* EasyImageCaptureDelegate.swift */,
 				D947B3F61FCB4D96007E8116 /* Errors.swift */,
+				D923DC85201E635F0011D155 /* EasyImageInputCameraType.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -223,6 +227,7 @@
 				D947B3F21FCB49DA007E8116 /* EasyImageCapture.swift in Sources */,
 				D947B3F71FCB4D96007E8116 /* Errors.swift in Sources */,
 				D947B3F51FCB4BFE007E8116 /* EasyImageCaptureDelegate.swift in Sources */,
+				D923DC86201E635F0011D155 /* EasyImageInputCameraType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D947B3E11FCB4446007E8116 /* ViewController.swift in Sources */,
+				D923DC87201E64070011D155 /* EasyImageInputCameraType.swift in Sources */,
 				D947B3F91FCB4FDC007E8116 /* Errors.swift in Sources */,
 				D947B3F81FCB4FD9007E8116 /* EasyImageCaptureDelegate.swift in Sources */,
 				D947B3DF1FCB4446007E8116 /* AppDelegate.swift in Sources */,

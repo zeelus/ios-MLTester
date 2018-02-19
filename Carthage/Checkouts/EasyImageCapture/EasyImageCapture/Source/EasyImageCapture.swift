@@ -14,6 +14,7 @@ public class EasyImageCapture: NSObject {
     
     private let cameraQueue = DispatchQueue(label: "cameraQueue")
     private let captureSession = AVCaptureSession()
+    private let options: [String: Any]?
     
     private var _delegate: EasyImageCaptureDelegate? = nil
     public var delegate: EasyImageCaptureDelegate? {
@@ -39,10 +40,10 @@ public class EasyImageCapture: NSObject {
     private var isPermission = false
     private var isSetup = false
     
-    override public init() {
+    public init(options: [String: Any]? = nil) {
+        self.options = options
         super.init()
         self.stop()
-        
     }
     
     private func checkPermission() {
@@ -78,10 +79,16 @@ public class EasyImageCapture: NSObject {
         
         guard let captureDevice = self.selectCaptureDevice() else { return }
         
-        do {
-            try captureDevice.lockForConfiguration()
-        } catch {
-            print("Capture device lock error")
+        if let options = self.options {
+            
+            do {
+                try captureDevice.lockForConfiguration()
+                captureDevice.setOptions(options: options)
+                captureDevice.unlockForConfiguration()
+            } catch {
+                print("Capture device lock error")
+            }
+            
         }
         
         guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
@@ -100,14 +107,23 @@ public class EasyImageCapture: NSObject {
     
     private func selectCaptureDevice() -> AVCaptureDevice? {
         
+        guard let prefer = self._delegate?.preferredCameraInput else { return nil }
+
         var types: [AVCaptureDevice.DeviceType] = [.builtInTelephotoCamera, .builtInWideAngleCamera]
         
         if #available(iOS 10.2, *) {
             types.append(.builtInDualCamera)
         }
         
+        if prefer == .front {
+            let devices: [AVCaptureDevice] = AVCaptureDevice.DiscoverySession.init(deviceTypes: types, mediaType: .video, position: .front).devices
+            return devices.first
+        }
+        
         let devices: [AVCaptureDevice] = AVCaptureDevice.DiscoverySession.init(deviceTypes: types, mediaType: .video, position: .back).devices
-        return devices.first
+        
+        
+        return devices.filter { $0.deviceType == prefer.getAVDevice() }.first
     }
     
     public func resume() {
@@ -152,3 +168,23 @@ fileprivate extension UIDeviceOrientation {
     }
 }
 
+fileprivate extension AVCaptureDevice {
+    
+    func setOptions(options: [String: Any]) {
+        
+        if let focusModeOption = options["focusMode"] as? AVCaptureDevice.FocusMode {
+            self.focusMode = focusModeOption
+        }
+        
+        if let focusPointOfInterestOption = options["focusPointOfInterest"] as? CGPoint {
+            self.focusPointOfInterest = focusPointOfInterestOption
+        }
+        
+        if let autoFocusRangeRestrictionOption = options["autoFocusRangeRestriction"] as? AVCaptureDevice.AutoFocusRangeRestriction {
+            if self.isAutoFocusRangeRestrictionSupported {
+                self.autoFocusRangeRestriction = autoFocusRangeRestrictionOption
+            }
+        }
+        
+    }
+}

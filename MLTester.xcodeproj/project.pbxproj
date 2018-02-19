@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D906129620225E6000726E6F /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D906129520225E6000726E6F /* SqueezeNet.mlmodel */; };
 		D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910F04D1FF28125008338EC /* FirstViewAnimation.swift */; };
 		D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D910F04F1FF2C2A5008338EC /* UIButton+Circle.swift */; };
 		D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D934FF021FE9C45B0023F6E0 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 		D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */; };
 		D96C37F51FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */; };
 		D96C37F71FF6CBD10021AFE0 /* GetImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */; };
+		D9A27E56203B701500606D68 /* CoreMLWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A27E55203B701500606D68 /* CoreMLWrapper.swift */; };
 		D9AE02F01FF45F08001EBE5F /* CircleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */; };
 		D9BEB23020054D0F005442E4 /* CoreMLListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BEB22F20054D0F005442E4 /* CoreMLListViewController.swift */; };
 		D9E22EF720040526007DC619 /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E22EF620040526007DC619 /* ListView.storyboard */; };
@@ -49,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D906129520225E6000726E6F /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		D910F04D1FF28125008338EC /* FirstViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewAnimation.swift; sourceTree = "<group>"; };
 		D910F04F1FF2C2A5008338EC /* UIButton+Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Circle.swift"; sourceTree = "<group>"; };
 		D934FEFF1FE9C45B0023F6E0 /* MLTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +70,7 @@
 		D96C37F01FF6C3B60021AFE0 /* StoryboardManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManger.swift; sourceTree = "<group>"; };
 		D96C37F41FF6C55A0021AFE0 /* ImageAnalizeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalizeCameraViewController.swift; sourceTree = "<group>"; };
 		D96C37F61FF6CBD10021AFE0 /* GetImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GetImage.storyboard; sourceTree = "<group>"; };
+		D9A27E55203B701500606D68 /* CoreMLWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLWrapper.swift; sourceTree = "<group>"; };
 		D9AE02EF1FF45F08001EBE5F /* CircleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnimation.swift; sourceTree = "<group>"; };
 		D9BEB22F20054D0F005442E4 /* CoreMLListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLListViewController.swift; sourceTree = "<group>"; };
 		D9E22EF620040526007DC619 /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			children = (
 				D9BEB22E2005487D005442E4 /* Models */,
 				D947F4822002998D00E48465 /* CoreMLProvider.swift */,
+				D9A27E55203B701500606D68 /* CoreMLWrapper.swift */,
 			);
 			path = CoreMLModels;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 		D9BEB22E2005487D005442E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D906129520225E6000726E6F /* SqueezeNet.mlmodel */,
 				D95C8FBA1FF7DB3F00C9808C /* Inceptionv3.mlmodel */,
 			);
 			path = Models;
@@ -386,12 +392,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D934FF031FE9C45B0023F6E0 /* AppDelegate.swift in Sources */,
+				D9A27E56203B701500606D68 /* CoreMLWrapper.swift in Sources */,
 				D9FC96EC1FF265B800406A06 /* FirstViewController.swift in Sources */,
 				D910F04E1FF28125008338EC /* FirstViewAnimation.swift in Sources */,
 				D947F4832002998D00E48465 /* CoreMLProvider.swift in Sources */,
 				D910F0501FF2C2A5008338EC /* UIButton+Circle.swift in Sources */,
 				D963754D200143230012E4FE /* RealTimeViewController.swift in Sources */,
 				D9BEB23020054D0F005442E4 /* CoreMLListViewController.swift in Sources */,
+				D906129620225E6000726E6F /* SqueezeNet.mlmodel in Sources */,
 				D96C37F11FF6C3B60021AFE0 /* StoryboardManger.swift in Sources */,
 				D95C8FBB1FF7DB3F00C9808C /* Inceptionv3.mlmodel in Sources */,
 				D947F4852002A07700E48465 /* ImageAnalyzer.swift in Sources */,

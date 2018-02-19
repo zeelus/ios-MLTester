@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    let imageCapture = EasyImageCapture()
+    let imageCapture = EasyImageCapture(options: ["autoFocusRangeRestriction": AVCaptureDevice.AutoFocusRangeRestriction.near])
     @IBOutlet weak var imageView: UIImageView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -31,6 +31,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EasyImageCaptureDelegate {
+    
+    var preferredCameraInput: EasyImageInputCameraType {
+        return .buidtDual
+    }
+    
     
     func capture(_ imageCapture: EasyImageCapture, isPermission: Bool) {
         if !isPermission {

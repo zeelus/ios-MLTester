@@ -81,6 +81,7 @@
                     </view>
                     <connections>
                         <outlet property="mainView" destination="vuj-Xe-Ej2" id="0gP-R1-o5B"/>
+                        <outlet property="tableView" destination="AR6-Pd-WS1" id="Tok-hE-gBe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dB-rY-UW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
